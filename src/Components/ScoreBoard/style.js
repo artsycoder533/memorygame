@@ -26,6 +26,6 @@ export const StyledButton = styled.button`
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
 `;
