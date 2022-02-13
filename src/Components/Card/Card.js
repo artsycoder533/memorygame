@@ -1,13 +1,28 @@
-import React from 'react';
-import { StyledCard } from './style';
-import { Image } from './style';
+import React from "react";
+import { StyledCard } from "./style";
+import { Image } from "./style";
 
-function Card({src, title}) {
+function Card({ src, title, updateScore, randomizeImages, disabledCards }) {
+
+  function handleCardClick(e) {
+    const card = e.currentTarget.title;
+    randomizeImages();
+    updateScore(card);
+  }
+
   return (
-      <StyledCard>
+    <>
+      {disabledCards ? (
+        <StyledCard onClick={handleCardClick} title={title}>
           <Image src={src} alt={title} />
-    </StyledCard>
-  )
+        </StyledCard>
+      ) : (
+        <StyledCard title={title} hideCursor>
+          <Image src={src} alt={title} />
+        </StyledCard>
+      )}
+    </>
+  );
 }
 
-export default Card
+export default Card;

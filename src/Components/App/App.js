@@ -1,19 +1,72 @@
 import React from "react";
 import Header from "../Header/Header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GameBoard from "../GameBoard/GameBoard";
 import { Container, UniversalStyle } from "./style";
 import Footer from "../Footer/Footer";
+import ScoreBoard from "../ScoreBoard/ScoreBoard";
 
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
+  const [bestScoreHistory, setBestScoreHistory] = useState([0]);
+  const [selectedCards, setSelectedCards] = useState([]);
+  const [disabledCards, setDisabledCards] = useState(false);
+
+  useEffect(() => {
+    setBestScore(getBestScore());
+    setCurrentScore(0);
+  }, [bestScoreHistory]);
+
+  function updateScore(card) {
+    setSelectedCards([...selectedCards, card]);
+    checkForDuplicates(card);
+    console.log(checkForGameWinner());
+    checkForGameWinner() === true ? setDisabledCards(true) : setDisabledCards(false);
+  }
+
+  function checkForDuplicates(card) {
+    //iterate through selectedCars array
+    const newArray = selectedCards.filter(select => {
+      return select === card;
+    });
+    //if theres a duplicate
+    if (newArray.length > 0) {
+      setBestScoreHistory([...bestScoreHistory, currentScore]);
+    }
+    else {
+      setCurrentScore(currentScore + 1);
+    }
+  }
+
+  function getBestScore() {
+    const highestScore = Math.max(...bestScoreHistory);
+    return highestScore;
+  }
+
+  function checkForGameWinner() {
+    let gameWon;
+    currentScore === 9 ? gameWon = true : gameWon = false;
+    return gameWon;
+  }
+
+  function startNewGame() {
+    setCurrentScore(0);
+    setBestScore(0);
+    setDisabledCards(false);
+  }
+
 
   return (
     <Container>
       <UniversalStyle />
-      <Header />
-      <GameBoard />
+      <Header currentScore={currentScore} bestScore={bestScore} />
+      <ScoreBoard
+        currentScore={currentScore}
+        bestScore={bestScore}
+        startNewGame={startNewGame}
+      />
+      <GameBoard updateScore={updateScore} disabledCards={disabledCards} />
       <Footer />
     </Container>
   );
