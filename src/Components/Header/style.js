@@ -8,6 +8,7 @@ export const StyledHeader = styled.header`
     color: #fff;
     flex-wrap: wrap;
     padding: 1rem;
+    text-align: center;
 `;
 
 export const Title = styled.h1`

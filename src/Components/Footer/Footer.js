@@ -1,19 +1,23 @@
-import React from 'react';
-import { StyledFooter } from './style';
+import React from "react";
+import { StyledFooter, StyledLink } from "./style";
 
 function Footer() {
   return (
     <StyledFooter>
       <small>
-        Made by:
-        <a href="www.natashajohnson.dev" target="_blank"></a> Natasha Johnson{" "}
+        Made by:{" "}
+        <a href="www.natashajohnson.dev" target="_blank">
+          Natasha Johnson
+        </a>{" "}
       </small>
       <small>
-        Images courtesy of
-        <a href="https://randomuser.me/photos" target="_blank"></a>{" "}
+        Images courtesy of:{" "}
+        <StyledLink href="https://randomuser.me/photos" target="_blank">
+          Random User Generator
+        </StyledLink>{" "}
       </small>
     </StyledFooter>
   );
 }
 
-export default Footer
+export default Footer;

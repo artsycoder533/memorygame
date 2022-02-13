@@ -5,5 +5,13 @@ export const StyledFooter = styled.footer`
     color: #fff;
     text-align: center;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+`;
+
+export const StyledLink = styled.a`
+    &:visited {
+        color: blue;
+    }
 `;
 
