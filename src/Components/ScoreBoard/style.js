@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const StyledBoard = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    gap: 2rem;
 `;
 
 export const StyledParagraph = styled.p`

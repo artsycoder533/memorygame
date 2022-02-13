@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
 export const Board = styled.section`
-    border: 1px solid red;
+    max-width: 600px;
+    width: 90vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+`;
+
+export const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 `;
