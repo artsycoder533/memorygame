@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { Board, Container } from "./style";
 import Card from "../Card/Card";
 import Img0 from "../../images/0.jpg";
@@ -23,13 +23,6 @@ function GameBoard({ updateScore, disabledCards }) {
     { title: "image 7", src: Img7 },
     { title: "image 8", src: Img8 },
   ]);
-
-  const [selected, setSelected] = useState([]);
-
-  function handleCardClick(e) {
-    console.log(e.currentTarget.title);
-    randomizeImages();
-  }
 
   function randomizeImages() {
     //shuffle cards
