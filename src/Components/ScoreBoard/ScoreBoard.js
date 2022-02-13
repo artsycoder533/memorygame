@@ -1,6 +1,5 @@
 import React from "react";
-import { StyledBoard } from "./style";
-import { Score } from "./style";
+import { StyledBoard, Score, StyledButton } from "./style";
 
 function ScoreBoard({currentScore, bestScore}) {
   return (
@@ -11,7 +10,7 @@ function ScoreBoard({currentScore, bestScore}) {
       <p>
         Best Score: <Score>{bestScore}</Score>
           </p>
-      <button>Reset Game</button>
+      <StyledButton>Reset Game</StyledButton>
     </StyledBoard>
   );
 }
