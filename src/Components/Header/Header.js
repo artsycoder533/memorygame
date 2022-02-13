@@ -6,7 +6,7 @@ function Header(props) {
     return (
       <StyledHeader>
             <Title>Test your memory!</Title>
-            <ScoreBoard></ScoreBoard>
+            <ScoreBoard currentScore={0} bestScore={25}></ScoreBoard>
       </StyledHeader>
     );
 }

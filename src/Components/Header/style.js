@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-    border: 1px solid red;
     display: flex;
+    justify-content: space-around;
+    background: #000;
+    color: #fff;
 `;
 
 export const Title = styled.h1`
