@@ -20,7 +20,7 @@ export const Score = styled.span`
 
 export const StyledButton = styled.button`
   border: 1px solid transparent;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0.75rem;
   font-size: 1rem;
   background: blue;
   color: white;
