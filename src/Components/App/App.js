@@ -21,7 +21,6 @@ function App() {
   function updateScore(card) {
     setSelectedCards([...selectedCards, card]);
     checkForDuplicates(card);
-    console.log(checkForGameWinner());
     checkForGameWinner() === true
       ? setDisabledCards(true)
       : setDisabledCards(false);
@@ -52,9 +51,11 @@ function App() {
   }
 
   function startNewGame() {
+    console.log(disabledCards);
     setCurrentScore(0);
     setBestScore(0);
     setDisabledCards(false);
+    
   }
 
   return (

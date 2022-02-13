@@ -12,12 +12,12 @@ function Card({ src, title, updateScore, randomizeImages, disabledCards }) {
 
   return (
     <>
-      {disabledCards ? (
+      {disabledCards === false ? (
         <StyledCard onClick={handleCardClick} title={title}>
           <Image src={src} alt={title} />
         </StyledCard>
       ) : (
-        <StyledCard title={title} hideCursor>
+          <StyledCard title={title} hideCursor>
           <Image src={src} alt={title} />
         </StyledCard>
       )}

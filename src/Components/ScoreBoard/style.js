@@ -8,16 +8,19 @@ export const StyledBoard = styled.div`
   font-size: 1.2rem;
   font-weight: bold;
   align-items: center;
+  text-align: center;
 `;
 
 export const Score = styled.span`
     color: blue;
     font-size: 1.5rem;
+    width: 100%;
+    display: block;
 `;
 
 export const StyledButton = styled.button`
   border: 1px solid transparent;
-  padding: 1rem;
+  padding: 0.25rem 0.5rem;
   font-size: 1rem;
   background: blue;
   color: white;
