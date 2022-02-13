@@ -56,7 +56,8 @@ function App() {
     setCurrentScore(0);
     setBestScore(0);
     setDisabledCards(false);
-    
+    setSelectedCards([]);
+    setBestScoreHistory([0]);
   }
 
   function endGame() {
