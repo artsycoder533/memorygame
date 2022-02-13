@@ -35,6 +35,7 @@ function App() {
     //if theres a duplicate
     if (newArray.length > 0) {
       setBestScoreHistory([...bestScoreHistory, currentScore]);
+      setSelectedCards([]);
     } else {
       setCurrentScore(currentScore + 1);
     }

@@ -6,9 +6,9 @@ function Footer() {
     <StyledFooter>
       <small>
         Made by:{" "}
-        <a href="https://natashajohnson.dev/" target="_blank">
+        <StyledLink href="https://natashajohnson.dev/" target="_blank">
           Natasha Johnson
-        </a>{" "}
+        </StyledLink>{" "}
       </small>
       <small>
         Images courtesy of:{" "}
