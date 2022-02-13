@@ -13,10 +13,10 @@ function App() {
   const [selectedCards, setSelectedCards] = useState([]);
   const [disabledCards, setDisabledCards] = useState(false);
 
-  // useEffect(() => {
-  //   setBestScore(getBestScore());
-  //   setCurrentScore(0);
-  // }, [bestScoreHistory]);
+  useEffect(() => {
+    setBestScore(getBestScore());
+    setCurrentScore(0);
+  }, [bestScoreHistory]);
 
   function updateScore(card) {
     setSelectedCards([...selectedCards, card]);
