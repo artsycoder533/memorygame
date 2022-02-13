@@ -6,7 +6,7 @@ function Footer() {
     <StyledFooter>
       <small>
         Made by:{" "}
-        <a href="www.natashajohnson.dev" target="_blank">
+        <a href="https://natashajohnson.dev/" target="_blank">
           Natasha Johnson
         </a>{" "}
       </small>
