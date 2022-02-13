@@ -7,7 +7,6 @@ export const StyledCard = styled.article`
   max-width: 200px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   cursor: ${(props) => (props.hideCursor ? "not-allowed" : "pointer")};
-  //pointer-events: ${(props) => (props.disabled ? "none" : "auto")};
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;

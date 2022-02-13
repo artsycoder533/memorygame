@@ -22,19 +22,20 @@ function App() {
     setSelectedCards([...selectedCards, card]);
     checkForDuplicates(card);
     console.log(checkForGameWinner());
-    checkForGameWinner() === true ? setDisabledCards(true) : setDisabledCards(false);
+    checkForGameWinner() === true
+      ? setDisabledCards(true)
+      : setDisabledCards(false);
   }
 
   function checkForDuplicates(card) {
     //iterate through selectedCars array
-    const newArray = selectedCards.filter(select => {
+    const newArray = selectedCards.filter((select) => {
       return select === card;
     });
     //if theres a duplicate
     if (newArray.length > 0) {
       setBestScoreHistory([...bestScoreHistory, currentScore]);
-    }
-    else {
+    } else {
       setCurrentScore(currentScore + 1);
     }
   }
@@ -46,7 +47,7 @@ function App() {
 
   function checkForGameWinner() {
     let gameWon;
-    currentScore === 9 ? gameWon = true : gameWon = false;
+    currentScore === 9 ? (gameWon = true) : (gameWon = false);
     return gameWon;
   }
 
@@ -55,7 +56,6 @@ function App() {
     setBestScore(0);
     setDisabledCards(false);
   }
-
 
   return (
     <Container>

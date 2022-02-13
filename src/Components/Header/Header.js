@@ -4,7 +4,7 @@ import { StyledHeader, Title } from "./style";
 function Header(props) {
     return (
       <StyledHeader>
-            <Title>Test your memory!</Title>
+            <Title>Can you click on all 9 cards without repetition?!</Title>
       </StyledHeader>
     );
 }
