@@ -13,17 +13,18 @@ function App() {
   const [selectedCards, setSelectedCards] = useState([]);
   const [disabledCards, setDisabledCards] = useState(false);
 
-  useEffect(() => {
-    setBestScore(getBestScore());
-    setCurrentScore(0);
-  }, [bestScoreHistory]);
+  // useEffect(() => {
+  //   setBestScore(getBestScore());
+  //   setCurrentScore(0);
+  // }, [bestScoreHistory]);
 
   function updateScore(card) {
     setSelectedCards([...selectedCards, card]);
     checkForDuplicates(card);
-    checkForGameWinner() === true
-      ? setDisabledCards(true)
-      : setDisabledCards(false);
+    const status = checkForGameWinner();
+    if (status === true) {
+      endGame();
+    }
   }
 
   function checkForDuplicates(card) {
@@ -56,6 +57,12 @@ function App() {
     setBestScore(0);
     setDisabledCards(false);
     
+  }
+
+  function endGame() {
+    setDisabledCards(true);
+    setBestScore(currentScore);
+    setCurrentScore(0);
   }
 
   return (
